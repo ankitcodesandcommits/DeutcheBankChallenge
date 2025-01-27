@@ -4,12 +4,12 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import lombok.Data;
-
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-
-@Data
+@Data // Generates getters, setters, equals, hashCode, and toString
+@Builder // Builder pattern for object creation
+@ToString(onlyExplicitlyIncluded = true) // Customize toString generation
 public class Account {
 	
 	public static final Account DEFAULT_ACCOUNT = new Account(); // Default placeholder account
